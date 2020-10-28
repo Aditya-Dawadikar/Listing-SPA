@@ -5,6 +5,8 @@ const profilesController = require('../controllers/profile');
 
 router.get('/', profilesController.getAll)
 
+router.get('/find', profilesController.findProfile)
+
 router.get('/:id', profilesController.getById)
 
 router.post('/', profilesController.createNew)
