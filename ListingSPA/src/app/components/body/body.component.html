@@ -1,41 +1,31 @@
 <div class="gap"></div>
 <div class="gap"></div>
-<div class="body">
-    <div class="gap"></div>
-    <div class="tabs">
-        <ul class="tabs-ul">
-            <li>
-                <div class="tab active">
-                    <div class="icon"></div>
-                    Profiles
-                </div>
-            </li>
-            <li>
-                <div class="tab">
-                    <div class="icon"></div>
-                    Edit
-                </div>
-            </li>
-            <li>
-                <div class="tab">
-                    <div class="icon"></div>
-                    Delete
-                </div>
-            </li>
-        </ul>
-    </div>
-    <br>
-    <div class="line"></div>
-    <div class="view">
-        <!--<div class="grid-container">-->
+
+<mat-tab-group animationDuration="0ms">
+    <mat-tab label="Profiles">
         <ul class="grid-container">
             <li *ngFor="let person of People">
                 <app-card [person]="person"></app-card>
             </li>
         </ul>
+    </mat-tab>
+    <mat-tab label="Edit">
+        <ul class="grid-container">
+            <li *ngFor="let person of People">
+                <app-card-edit [person]="person"></app-card-edit>
+            </li>
+        </ul>
+    </mat-tab>
+    <mat-tab label="Delete">
+        <ul class="grid-container">
+            <li *ngFor="let person of People">
+                <app-card-delete [person]="person"></app-card-delete>
+            </li>
+        </ul>
+    </mat-tab>
+</mat-tab-group>
 
-        <!--</div>-->
-    </div>
+<app-edit-dialog></app-edit-dialog>
 
 
-</div>
+<!--<div class="overlay"></div>-->

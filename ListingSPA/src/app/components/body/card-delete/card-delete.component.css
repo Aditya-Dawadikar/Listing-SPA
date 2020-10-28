@@ -1,0 +1,75 @@
+.card {
+    width: 480px;
+    height: 200px;
+    display: flex;
+    background-color: #06D2FF;
+    box-shadow: 10px 10px 8px #b8cdd1;
+    margin: 10px 30px auto;
+}
+
+.avatar {
+    width: 40%;
+    height: 100%;
+}
+
+.circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    background-color: white;
+    margin: auto;
+    position: relative;
+    top: 40px;
+    font-size: 50px;
+    font-family: 'Rubik', sans-serif;
+    justify-content: center;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.details {
+    width: 60%;
+    height: 100%;
+    padding: 10px;
+    padding-top: 25px;
+}
+
+.name {
+    font-size: 30px;
+    font-family: 'Rubik', sans-serif;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.info {
+    list-style: none;
+    padding: 20px;
+    color: white;
+}
+
+.data {
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.info-key {
+    text-align: right;
+    width: 100px;
+    height: 20px;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.info-value {
+    text-align: left;
+    width: 100px;
+    height: 20px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.function-icon {
+    margin-left: 20px;
+}

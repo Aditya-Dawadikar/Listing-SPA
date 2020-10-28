@@ -10,6 +10,7 @@ import {PEOPLE} from '../../shared/mock-profiles';
 export class BodyComponent implements OnInit {
 
   People = PEOPLE;
+
   constructor() { }
 
   ngOnInit(): void {

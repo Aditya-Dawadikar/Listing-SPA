@@ -5,6 +5,7 @@
     box-shadow: 0px 5px 8px #b8cdd1;
     position: fixed;
     z-index: 2;
+    display: flex;
 }
 
 .search-bar {
@@ -47,4 +48,22 @@
     height: 35px;
     width: 35px;
     transform: translateY(20%);
+}
+
+.create-new {
+    position: relative;
+    top: 30px;
+    right: 30px;
+    transform: translateX(-30%);
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.create-new:hover {
+    color: black;
+}
+
+.new-user {
+    margin-right: 10px;
 }
