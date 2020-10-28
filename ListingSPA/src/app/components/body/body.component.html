@@ -1,0 +1,41 @@
+<div class="gap"></div>
+<div class="gap"></div>
+<div class="body">
+    <div class="gap"></div>
+    <div class="tabs">
+        <ul class="tabs-ul">
+            <li>
+                <div class="tab active">
+                    <div class="icon"></div>
+                    Profiles
+                </div>
+            </li>
+            <li>
+                <div class="tab">
+                    <div class="icon"></div>
+                    Edit
+                </div>
+            </li>
+            <li>
+                <div class="tab">
+                    <div class="icon"></div>
+                    Delete
+                </div>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div class="line"></div>
+    <div class="view">
+        <!--<div class="grid-container">-->
+        <ul class="grid-container">
+            <li *ngFor="let person of People">
+                <app-card [person]="person"></app-card>
+            </li>
+        </ul>
+
+        <!--</div>-->
+    </div>
+
+
+</div>
