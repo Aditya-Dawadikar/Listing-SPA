@@ -69,7 +69,7 @@
     position: relative;
     width: 400px;
     margin: auto;
-    left: calc(50% - 125px);
+    left: calc(50% - 200px);
     top: 10%;
     color: black;
     display: flex;
@@ -97,6 +97,7 @@
     padding: 5px;
     text-align: center;
     box-shadow: 5px 5px 5px #566159;
+    cursor: pointer;
 }
 
 .edit {

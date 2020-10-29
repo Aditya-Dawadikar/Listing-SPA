@@ -34,4 +34,16 @@ export class ProfileComponent implements OnInit {
     this.router.navigateByUrl(url);
   }
 
+  deleteProfile(){
+    alert(this.person.name +" will be deleted permanantly")
+
+    let index = this.people.findIndex(person=>{
+      return String(this.person._id)===String(person._id);
+    })
+    PEOPLE.splice(index,1);
+
+    let url="/"
+    this.router.navigateByUrl(url);
+  }
+
 }
