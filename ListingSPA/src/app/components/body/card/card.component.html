@@ -5,7 +5,10 @@
         </div>
     </div>
     <div class="details">
-        <div class="name"><strong>{{person.name}}</strong></div>
+        <div class="name">
+            <strong>{{person.name}}</strong>
+
+        </div>
         <ul class="info">
             <li class="data">
                 <div class="info-key">Age :</div>
@@ -21,4 +24,10 @@
             </li>
         </ul>
     </div>
+
+    <div class="button">
+        <a routerLink="/edit" routerLinkActive="active"><img class="function-icon" src="../../../../assets/icons/edit.svg" style="height: 28px;width: 28px;"></a>
+        <img class="function-icon" (click)="deleteCard.emit()" src="../../../../assets/icons/trash.svg" style="height: 33px;width: 33px;">
+    </div>
+    <a routerLink="/profile/1" class="info-link"><img src="../../../../assets/icons/info.svg" alt="" style="height: 35px;width: 35px;"></a>
 </div>

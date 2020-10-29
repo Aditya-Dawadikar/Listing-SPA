@@ -1,0 +1,53 @@
+<div class="container">
+    <a routerLink="/" routerLinkActive="active"><img class="cancel" src="../../../../assets/icons/close.svg" alt="" style="height: 25px;width:25px"></a>
+    <div class="avatar">
+        <div class="circle">
+            <Strong>AD</Strong>
+        </div>
+    </div>
+    <ul class="info-ul">
+        <li class="personInfo">
+            <div class="key">Name :</div>
+            <div class="value">Aditya</div>
+        </li>
+        <li class="personInfo">
+            <div class="key">UID :</div>
+            <div class="value">1298309621bsku2198etf2</div>
+        </li>
+        <li class="personInfo">
+            <div class="key">Age :</div>
+            <div class="value">23</div>
+        </li>
+        <li class="personInfo">
+            <div class="key">Gender :</div>
+            <div class="value">Male</div>
+        </li>
+        <li class="personInfo">
+            <div class="key">Blood Group :</div>
+            <div class="value">B+</div>
+        </li>
+        <li class="personInfo">
+            <div class="key">Birth Date :</div>
+            <div class="value">18/12/2000</div>
+        </li>
+        <li class="personInfo">
+            <div class="key">Phone :</div>
+            <div class="value">99999999999</div>
+        </li>
+        <li class="personInfo">
+            <div class="key">email :</div>
+            <div class="value">adityadawadikar2000@gmail.com</div>
+        </li>
+    </ul>
+    <br>
+    <div class="functions">
+        <a routerLink="/edit" routerLinkActive="active" class="inactive">
+            <div class="button edit">
+                <img class="function-icon" src="../../../../assets/icons/edit.svg" style="height: 28px;width: 28px;"> Edit
+            </div>
+        </a>
+        <div class="button delete">
+            <img class="function-icon" (click)="deleteCard.emit()" src="../../../../assets/icons/trash.svg" style="height: 33px;width: 33px;"> Delete
+        </div>
+    </div>
+</div>

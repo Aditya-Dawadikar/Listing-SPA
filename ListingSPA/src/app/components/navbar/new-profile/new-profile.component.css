@@ -10,6 +10,7 @@
     left: calc(50% - 250px);
     top: calc(50% - 165px);
     z-index: 3;
+    border: #566159 1px solid;
 }
 
 .form-label {

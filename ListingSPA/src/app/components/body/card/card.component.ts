@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,Output } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import {Person} from '../../../shared/profiles';
 
 @Component({
@@ -14,5 +14,7 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  @Output() deleteCard = new EventEmitter();
 
 }

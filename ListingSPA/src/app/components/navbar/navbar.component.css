@@ -10,6 +10,7 @@
 
 .search-bar {
     margin: auto;
+    margin-bottom: 30px;
     width: 30%;
     height: 70%;
     display: flex;
@@ -66,4 +67,9 @@
 
 .new-user {
     margin-right: 10px;
+}
+
+.inactive {
+    text-decoration: none;
+    color: black;
 }

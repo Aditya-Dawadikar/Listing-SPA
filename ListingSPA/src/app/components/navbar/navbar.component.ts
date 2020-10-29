@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import {NewCardModalServiceService} from '../../services/new-card-modal-service.service';
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,15 +7,11 @@ import {NewCardModalServiceService} from '../../services/new-card-modal-service.
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private CardService:NewCardModalServiceService) { }
+  constructor() { }
 
   ngOnInit(): void {
 
   }
 
-  addNewProfile(){
-    this.CardService.display();
-    console.log("sending show request")
-  }
 
 }

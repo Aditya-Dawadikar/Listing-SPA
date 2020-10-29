@@ -1,5 +1,5 @@
 <div class="edit-form">
-    <a routerLink="/" routerLinkActive="active"><img src="../../../../assets/icons/delete.svg" class="cancel-button"></a>
+    <a routerLink="/" routerLinkActive="active"><img src="../../../../assets/icons/close.svg" class="cancel-button"></a>
     <label class="form-label">Name :</label>
     <input class="form-input" type="text" name="Name" #name placeholder="eg: Jon Doe">
     <br><br>
@@ -16,7 +16,7 @@
     <label class="form-label">Phone :</label>
     <input class="form-input" type="tel" #phone placeholder="eg: 9850xxxxxx">
     <br><br>
-    <a routerLink="/" routerLinkActive="active">
+    <a routerLink="/" routerLinkActive="active" class="inactive">
         <div class="submit-button" (click)="edit(name.value,number.value,gender.value,phone.value)"><img src="../../../../assets/icons/edit.svg" style="height: 20px;width: 20px;"> Save</div>
     </a>
 </div>
