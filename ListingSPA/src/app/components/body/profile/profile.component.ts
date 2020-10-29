@@ -1,5 +1,10 @@
 import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 
+import {PEOPLE} from '../../../shared/mock-profiles';
+import {Person} from '../../../shared/profiles';
+
+import {Router,ActivatedRoute} from '@angular/router';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -7,10 +12,26 @@ import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  people=PEOPLE
+  person:Person
+
+  constructor(private activatedRouter:ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
+    let id = this.activatedRouter.snapshot.paramMap.get('id');
+
+    let index = this.people.findIndex(person=>{
+      return String(id)===String(person._id);
+    })
+
+    this.person=this.people[index];
   }
 
-  @Output() deleteCard = new EventEmitter();
+  editProfile(){
+    let baseUrl="/edit/";
+    let id= this.person._id;
+    let url=baseUrl+String(id)
+    this.router.navigateByUrl(url);
+  }
+
 }

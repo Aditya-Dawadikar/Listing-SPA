@@ -1,20 +1,20 @@
 <div class="edit-form">
     <a routerLink="/" routerLinkActive="active"><img src="../../../../assets/icons/close.svg" class="cancel-button"></a>
     <label class="form-label">Name :</label>
-    <input class="form-input" type="text" name="Name" #name placeholder="eg: Jon Doe">
+    <input class="form-input" type="text" name="Name" #name value={{person.name}}>
     <br><br>
     <label class="form-label">Age :</label>
-    <input class="form-input" type="number" name="Number" #number placeholder="eg: 23">
+    <input class="form-input" type="number" name="Number" #number value={{person.age}}>
     <br><br>
     <label class="form-label">Gender :</label>
-    <select class="form-input" name="Gender" #gender>
+    <select class="form-input" name="Gender" #gender value={{person.gender}}>
       <option value="Male">Male</option>
       <option value="Female">Female</option>
       <option value="Other">Other</option>
     </select>
     <br><br>
     <label class="form-label">Phone :</label>
-    <input class="form-input" type="tel" #phone placeholder="eg: 9850xxxxxx">
+    <input class="form-input" type="tel" #phone value={{person.phone}}>
     <br><br>
     <a routerLink="/" routerLinkActive="active" class="inactive">
         <div class="submit-button" (click)="edit(name.value,number.value,gender.value,phone.value)"><img src="../../../../assets/icons/edit.svg" style="height: 20px;width: 20px;"> Save</div>

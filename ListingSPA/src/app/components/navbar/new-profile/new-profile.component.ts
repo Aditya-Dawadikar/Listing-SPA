@@ -1,6 +1,7 @@
 import { Component,ViewChild, ElementRef, Input, OnInit } from '@angular/core';
 
 import {PEOPLE} from '../../../shared/mock-profiles';
+import {Router,ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-new-profile',
@@ -9,9 +10,9 @@ import {PEOPLE} from '../../../shared/mock-profiles';
 })
 export class NewProfileComponent implements OnInit {
 
-  display:boolean=false;
+  display:boolean=true;
 
-  constructor() { }
+  constructor(private router:Router,private activatedRouter:ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -26,7 +27,10 @@ export class NewProfileComponent implements OnInit {
     }
 
     PEOPLE.push(newCard)
+    this.display=!this.display
 
+    //navigate to listing page
+    this.router.navigateByUrl('/');
   }
 
   toggleDisplay(){

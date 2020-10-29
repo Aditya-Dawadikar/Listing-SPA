@@ -1,4 +1,4 @@
-<div class="edit-form">
+<div class="edit-form" [ngClass]="{'hide-modal':display===false}">
     <a routerLink="/" routerLinkActive="active"><img src="../../../../assets/icons/close.svg" class="cancel-button"></a>
     <label class="form-label">Name :</label>
     <input class="form-input" type="text" name="Name" #name placeholder="eg: Jon Doe">
@@ -16,7 +16,8 @@
     <label class="form-label">Phone :</label>
     <input class="form-input" type="tel" #phone placeholder="eg: 9850xxxxxx">
     <br><br>
-    <a routerLink="/" routerLinkActive="active">
-        <div (click)="addNewCard(name.value,age.value,gender.value,phone.value)" class="submit-button"><img src="../../../../assets/icons/edit.svg" style="height: 20px;width: 20px;"> Save</div>
-    </a>
+
+    <div (click)="addNewCard(name.value,age.value,gender.value,phone.value)" class="submit-button">
+        <img src="../../../../assets/icons/edit.svg" style="height: 20px;width: 20px;"> Save
+    </div>
 </div>

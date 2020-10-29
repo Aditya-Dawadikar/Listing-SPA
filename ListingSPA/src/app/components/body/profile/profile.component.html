@@ -8,7 +8,7 @@
     <ul class="info-ul">
         <li class="personInfo">
             <div class="key">Name :</div>
-            <div class="value">Aditya</div>
+            <div class="value">{{person.name}}</div>
         </li>
         <li class="personInfo">
             <div class="key">UID :</div>
@@ -16,11 +16,11 @@
         </li>
         <li class="personInfo">
             <div class="key">Age :</div>
-            <div class="value">23</div>
+            <div class="value">{{person.age}}</div>
         </li>
         <li class="personInfo">
             <div class="key">Gender :</div>
-            <div class="value">Male</div>
+            <div class="value">{{person.gender}}</div>
         </li>
         <li class="personInfo">
             <div class="key">Blood Group :</div>
@@ -32,7 +32,7 @@
         </li>
         <li class="personInfo">
             <div class="key">Phone :</div>
-            <div class="value">99999999999</div>
+            <div class="value">{{person.phone}}</div>
         </li>
         <li class="personInfo">
             <div class="key">email :</div>
@@ -41,13 +41,11 @@
     </ul>
     <br>
     <div class="functions">
-        <a routerLink="/edit" routerLinkActive="active" class="inactive">
-            <div class="button edit">
-                <img class="function-icon" src="../../../../assets/icons/edit.svg" style="height: 28px;width: 28px;"> Edit
-            </div>
-        </a>
-        <div class="button delete">
-            <img class="function-icon" (click)="deleteCard.emit()" src="../../../../assets/icons/trash.svg" style="height: 33px;width: 33px;"> Delete
+        <div class="button edit" (click)="editProfile()">
+            <img class="function-icon" src="../../../../assets/icons/edit.svg" style="height: 28px;width: 28px;"> Edit
         </div>
+        <!--<div class="button delete">
+            <img class="function-icon" src="../../../../assets/icons/trash.svg" style="height: 33px;width: 33px;"> Delete
+        </div>-->
     </div>
 </div>

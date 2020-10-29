@@ -6,7 +6,7 @@ import {NewProfileComponent} from '../app/components/navbar/new-profile/new-prof
 import {ProfileComponent} from '../app/components/body/profile/profile.component';
 
 const routes: Routes = [
-  {path:'edit',component:EditDialogComponent},
+  {path:'edit/:id',component:EditDialogComponent},
   {path:'new',component:NewProfileComponent},
   {path:'profile/:id',component:ProfileComponent}
 ];
