@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-edit-dialog',
@@ -13,4 +12,7 @@ export class EditDialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  edit(name,age,gender,phone){
+    alert("profile will be editted")
+  }
 }

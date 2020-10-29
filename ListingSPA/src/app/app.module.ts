@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardEditComponent } from './components/body/card-edit/card-edit.component';
 import { CardDeleteComponent } from './components/body/card-delete/card-delete.component';
 import { EditDialogComponent } from './components/body/edit-dialog/edit-dialog.component';
+import { NewProfileComponent } from './components/navbar/new-profile/new-profile.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EditDialogComponent } from './components/body/edit-dialog/edit-dialog.c
     CardComponent,
     CardEditComponent,
     CardDeleteComponent,
-    EditDialogComponent
+    EditDialogComponent,
+    NewProfileComponent,
   ],
   imports: [
     BrowserModule,

@@ -24,7 +24,7 @@
     font-family: 'Rubik', sans-serif;
     justify-content: center;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 50px;
 }
 
 .details {
@@ -72,4 +72,10 @@
 
 .function-icon {
     margin-left: 20px;
+    cursor: pointer;
+}
+
+.function-icon:hover {
+    transform: scale(1.2);
+    transition: 0.2s ease-in;
 }

@@ -19,13 +19,10 @@
     <mat-tab label="Delete">
         <ul class="grid-container">
             <li *ngFor="let person of People">
-                <app-card-delete [person]="person"></app-card-delete>
+                <app-card-delete (deleteCard)="deleteCard(person)" [person]="person"></app-card-delete>
             </li>
         </ul>
     </mat-tab>
 </mat-tab-group>
-
-<app-edit-dialog></app-edit-dialog>
-
 
 <!--<div class="overlay"></div>-->

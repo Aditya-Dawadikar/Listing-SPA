@@ -4,7 +4,7 @@
     <input class="form-input" type="text" name="Name" #name placeholder="eg: Jon Doe">
     <br><br>
     <label class="form-label">Age :</label>
-    <input class="form-input" type="number" name="Number" #number placeholder="eg: 23">
+    <input class="form-input" type="number" name="Number" #age placeholder="eg: 23">
     <br><br>
     <label class="form-label">Gender :</label>
     <select class="form-input" name="Gender" #gender>
@@ -17,6 +17,6 @@
     <input class="form-input" type="tel" #phone placeholder="eg: 9850xxxxxx">
     <br><br>
     <a routerLink="/" routerLinkActive="active">
-        <div class="submit-button" (click)="edit(name.value,number.value,gender.value,phone.value)"><img src="../../../../assets/icons/edit.svg" style="height: 20px;width: 20px;"> Save</div>
+        <div (click)="addNewCard(name.value,age.value,gender.value,phone.value)" class="submit-button"><img src="../../../../assets/icons/edit.svg" style="height: 20px;width: 20px;"> Save</div>
     </a>
 </div>

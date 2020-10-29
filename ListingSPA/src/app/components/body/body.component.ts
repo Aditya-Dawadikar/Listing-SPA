@@ -16,4 +16,12 @@ export class BodyComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deleteCard(person){
+    alert(person.name +" will be deleted permanantly")
+    let index = this.People.findIndex(indexPerson=>{
+      return String(person._id)===String(indexPerson._id)
+    })
+    this.People.splice(index,1);
+  }
+
 }
