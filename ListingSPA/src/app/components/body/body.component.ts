@@ -22,6 +22,7 @@ export class BodyComponent implements OnInit {
         PEOPLE.push(data.people[i])
       }
     })
+
   }
 
   deleteCard(person){
@@ -36,4 +37,17 @@ export class BodyComponent implements OnInit {
     })
   }
 
+  reInitBody(){
+    this.People=PEOPLE
+  }
+
+  restore(){
+    PEOPLE.splice(0,PEOPLE.length)
+    this.profileApi.getAllProfiles().subscribe((data:any)=>{
+      this.People=data.people
+      for(let i=0;i<data.people.length;i++){
+        PEOPLE.push(data.people[i])
+      }
+    })
+  }
 }

@@ -73,3 +73,28 @@
     text-decoration: none;
     color: black;
 }
+
+.clear {
+    position: relative;
+    display: flex;
+    top: 30px;
+    left: 50px;
+    background-color: #9E8585;
+    padding: 5px;
+    opacity: 0.3;
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 2px #000;
+    cursor: pointer;
+}
+
+.clear:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+    transition: 0.2s ease-in;
+}
+
+.hide {
+    display: none;
+}

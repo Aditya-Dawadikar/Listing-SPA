@@ -1,7 +1,7 @@
 import { Component,ViewChild, ElementRef, Input, OnInit } from '@angular/core';
 
-import {ProfileApiService} from '../../../services/profile-api.service';
-import {PEOPLE} from '../../../shared/mock-profiles';
+import {ProfileApiService} from '../../../../services/profile-api.service';
+import {PEOPLE} from '../../../../shared/mock-profiles';
 import {Router,ActivatedRoute} from '@angular/router';
 
 @Component({
