@@ -11,6 +11,7 @@ exports.getAll = (req, res) => {
             })
         })
         .catch(err => {
+            console.log(err)
             res.status(500).json({
                 message: "some error occured while fetching data",
                 people: err
@@ -20,7 +21,7 @@ exports.getAll = (req, res) => {
 
 exports.findProfile = (req, res) => {
     const queryName = req.query.name
-    Profile.find({ "name": { $regex: queryName, $options: '$i' } })
+    Profile.find({ name: { $regex: queryName, $options: '$i' } })
         .then(doc => {
             res.status(200).json({
                 message: "success",
@@ -42,7 +43,7 @@ exports.getById = (req, res) => {
         .then(doc => {
             res.status(200).json({
                 message: "success",
-                people: doc
+                person: doc
             })
         })
         .catch(err => {
@@ -58,11 +59,11 @@ exports.createNew = (req, res) => {
         name: req.body.name,
         age: req.body.age,
         gender: req.body.gender,
-        phone: req.body.phone
+        phone: req.body.phone,
+        bloodGroup: req.body.bloodGroup,
+        email: req.body.email,
+        birthDate: req.body.birthDate
     })
-
-    console.log(req.body)
-
     newPerson.save()
         .then(doc => {
             res.status(200).json({

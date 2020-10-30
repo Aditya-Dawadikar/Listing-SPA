@@ -4,4 +4,7 @@ export interface Person{
   age:number;
   gender:string;
   phone:number;
+  email:string;
+  //birthDate:Date;
+  bloodGroup:string;
 }

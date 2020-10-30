@@ -1,5 +1,5 @@
 .card {
-    width: 480px;
+    width: 400px;
     height: 200px;
     display: flex;
     background-color: #06D2FF;
@@ -14,18 +14,18 @@
 }
 
 .circle {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 60px;
     background-color: white;
-    margin: auto;
     position: relative;
     top: 40px;
-    font-size: 50px;
+    left: 20px;
+    font-size: 40px;
     font-family: 'Rubik', sans-serif;
     justify-content: center;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 45px;
 }
 
 .details {
@@ -36,7 +36,7 @@
 }
 
 .name {
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'Rubik', sans-serif;
     justify-content: center;
     text-align: center;
@@ -86,7 +86,7 @@
     display: flex;
     width: 50px;
     top: 155px;
-    right: 180px;
+    right: 200px;
 }
 
 .info-link {

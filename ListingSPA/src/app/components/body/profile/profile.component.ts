@@ -2,6 +2,7 @@ import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 
 import {PEOPLE} from '../../../shared/mock-profiles';
 import {Person} from '../../../shared/profiles';
+import {ProfileApiService} from '../../../services/profile-api.service';
 
 import {Router,ActivatedRoute} from '@angular/router';
 
@@ -15,16 +16,20 @@ export class ProfileComponent implements OnInit {
   people=PEOPLE
   person:Person
 
-  constructor(private activatedRouter:ActivatedRoute,private router:Router) { }
+  constructor(private activatedRouter:ActivatedRoute,private router:Router,private profileApi:ProfileApiService) { }
 
   ngOnInit(): void {
     let id = this.activatedRouter.snapshot.paramMap.get('id');
+    console.log("people:",PEOPLE)
 
     let index = this.people.findIndex(person=>{
       return String(id)===String(person._id);
     })
-
     this.person=this.people[index];
+    /*
+    this.profileApi.getById(id).subscribe((response:any)=>{
+      this.person=response.person
+    })*/
   }
 
   editProfile(){

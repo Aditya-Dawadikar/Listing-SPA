@@ -1,6 +1,6 @@
 .edit-form {
-    width: 500px;
-    height: 325px;
+    width: 520px;
+    height: 520px;
     background-color: #ffffff;
     box-shadow: 10px 10px 8px #556159;
     justify-content: center;
@@ -8,7 +8,7 @@
     padding: 30px;
     position: absolute;
     left: calc(50% - 250px);
-    top: calc(50% - 165px);
+    top: calc(50% - 200px);
     z-index: 3;
     border: #566159 1px solid;
 }
@@ -70,4 +70,13 @@
 .inactive {
     text-decoration: none;
     color: black;
+}
+
+.overlay {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    z-index: 2;
 }
