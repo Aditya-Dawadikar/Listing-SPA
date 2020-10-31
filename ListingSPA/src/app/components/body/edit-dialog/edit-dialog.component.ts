@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {Router,ActivatedRoute} from '@angular/router';
+import {FormGroup,FormBuilder,FormControl,Validators} from '@angular/forms';
 
 import {ProfileApiService} from '../../../services/profile-api.service';
 import {PEOPLE} from '../../../shared/mock-profiles';
@@ -14,33 +15,46 @@ export class EditDialogComponent implements OnInit {
 
   people=PEOPLE;
   person:Person;
+  editForm:FormGroup;
 
-  constructor(private activatedRouter:ActivatedRoute,private profileApi:ProfileApiService) { }
+  constructor(private fb:FormBuilder,private router:Router,private activatedRouter:ActivatedRoute,private profileApi:ProfileApiService) { }
 
   ngOnInit(): void {
+    //handling path
     let id = this.activatedRouter.snapshot.paramMap.get('id');
     let index = this.people.findIndex(person=>{
       return String(id)===String(person._id);
     })
-
     this.person=this.people[index];
+
+    //handling form
+    this.editForm=this.fb.group({
+      name:['',Validators.required],
+      age:[null,[Validators.required,Validators.min(0),Validators.max(120)]],
+      gender:['',Validators.required],
+      blood:['',Validators.required],
+      bdate:[null,Validators.required],
+      phone:[null,[Validators.required,Validators.minLength(10),Validators.maxLength(10)]],
+      email:[null,[Validators.required,Validators.email]],
+    });
   }
 
-
-  edit(name,age,gender,phone,blood,email,bdate){
+  submitEditForm(editForm:FormGroup){
     alert("profile will be editted")
     let index = this.people.findIndex(person=>{
       return String(this.person._id)===String(person._id);
     })
 
+    console.log('Valid?', editForm.valid); // true or false
+
     let updatedPerson={
-      name:name,
-      age:age,
-      gender:gender,
-      phone:phone,
-      email:email,
-      bloodGroup:blood,
-      birthDate:bdate
+      name:editForm.value.name,
+      age:editForm.value.age,
+      gender:editForm.value.gender,
+      phone:editForm.value.phone,
+      email:editForm.value.email,
+      bloodGroup:editForm.value.blood,
+      birthDate:editForm.value.bdate
     }
 
     PEOPLE.splice(index,1,updatedPerson)
@@ -49,5 +63,7 @@ export class EditDialogComponent implements OnInit {
       console.log(response);
     })
 
+    //navigate to listing page
+    this.router.navigateByUrl('/');
   }
 }

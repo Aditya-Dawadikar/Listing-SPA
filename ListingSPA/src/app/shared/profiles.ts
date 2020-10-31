@@ -5,6 +5,6 @@ export interface Person{
   gender:string;
   phone:number;
   email:string;
-  //birthDate:Date;
+  birthDate:Date;
   bloodGroup:string;
 }

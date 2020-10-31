@@ -49,6 +49,10 @@ export class ProfileComponent implements OnInit {
 
     let url="/"
     this.router.navigateByUrl(url);
+
+    this.profileApi.deleteProfile(this.person._id).subscribe((response:any)=>{
+      console.log(response);
+    })
   }
 
 }

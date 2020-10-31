@@ -5,7 +5,7 @@
     position: absolute;
     top: 120px;
     left: calc(50% - 250px);
-    box-shadow: 10px 10px 8px #b8cdd1;
+    box-shadow: 10px 10px 8px #575651;
     z-index: 100;
     border: #566159 1px solid;
 }
@@ -21,6 +21,7 @@
     height: 120px;
     border-radius: 60px;
     background-color: #06D2FF;
+    box-shadow: 3px 3px 5px #575651;
     margin: auto;
     position: relative;
     top: 40px;

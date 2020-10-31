@@ -1,8 +1,9 @@
 import { Component,ViewChild, ElementRef, Input, OnInit } from '@angular/core';
+import {Router,ActivatedRoute} from '@angular/router';
+import {FormGroup,FormBuilder,FormControl,Validators} from '@angular/forms';
 
 import {ProfileApiService} from '../../../../services/profile-api.service';
 import {PEOPLE} from '../../../../shared/mock-profiles';
-import {Router,ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-new-profile',
@@ -12,21 +13,33 @@ import {Router,ActivatedRoute} from '@angular/router';
 export class NewProfileComponent implements OnInit {
 
   display:boolean=true;
+  editForm:FormGroup;
 
-  constructor(private router:Router,private activatedRouter:ActivatedRoute,private profileApi:ProfileApiService) { }
+  constructor(private fb:FormBuilder,private router:Router,private activatedRouter:ActivatedRoute,private profileApi:ProfileApiService) { }
 
   ngOnInit(): void {
+    //handling form
+    this.editForm=this.fb.group({
+      name:['',Validators.required],
+      age:[null,[Validators.required,Validators.min(0),Validators.max(120)]],
+      gender:['',Validators.required],
+      blood:['',Validators.required],
+      bdate:[null,Validators.required],
+      phone:[null,[Validators.required,Validators.minLength(10),Validators.maxLength(10)]],
+      email:[null,[Validators.required,Validators.email]],
+    });
   }
 
-  addNewCard(name:string,age:number,gender:string,phone:number,blood:string,email:string,bdate:Date){
+  submitEditForm(editForm:FormGroup){
+    console.log('Valid?', editForm.valid); // true or false
     let newCard ={
-      name:name,
-      age:age,
-      gender:gender,
-      phone:phone,
-      email:email,
-      bloodGroup:blood,
-      birthDate:bdate
+      name:editForm.value.name,
+      age:editForm.value.age,
+      gender:editForm.value.gender,
+      phone:editForm.value.phone,
+      email:editForm.value.email,
+      bloodGroup:editForm.value.blood,
+      birthDate:editForm.value.bdate
     }
 
     PEOPLE.push(newCard)
@@ -38,10 +51,6 @@ export class NewProfileComponent implements OnInit {
 
     //navigate to listing page
     this.router.navigateByUrl('/');
-  }
-
-  toggleDisplay(){
-    this.display=!this.display;
   }
 
 }

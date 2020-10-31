@@ -1,20 +1,29 @@
-<div class="edit-form">
+<form [formGroup]="editForm" (ngSubmit)="submitEditForm(editForm)" class="edit-form">
     <a routerLink="/" routerLinkActive="active"><img src="../../../../assets/icons/close.svg" class="cancel-button"></a>
     <label class="form-label">Name :</label>
-    <input class="form-input" type="text" name="Name" #name value={{person.name}}>
+    <input class="form-input" formControlName="name" type="text" name="Name" #name value={{person.name}}>
+    <div class="error" *ngIf="editForm.get('name').hasError('required')">
+        please provide your name
+    </div>
     <br><br>
     <label class="form-label">Age :</label>
-    <input class="form-input" type="number" name="Number" #number value={{person.age}}>
+    <input class="form-input" formControlName="age" type="number" name="Number" #number value={{person.age}}>
+    <div class="error" *ngIf="editForm.get('age').hasError('required')">
+        please provide your age
+    </div>
     <br><br>
     <label class="form-label">Gender :</label>
-    <select class="form-input" name="Gender" #gender value={{person.gender}}>
+    <select class="form-input" formControlName="gender" name="Gender" #gender value={{person.gender}}>
       <option value="Male">Male</option>
       <option value="Female">Female</option>
       <option value="Other">Other</option>
     </select>
+    <div class="error" *ngIf="editForm.get('gender').hasError('required')">
+        please provide your gender
+    </div>
     <br><br>
     <label class="form-label">Blood Group :</label>
-    <select class="form-input" name="BloodGroup" #blood>
+    <select class="form-input" formControlName="blood" name="BloodGroup" #blood value={{person.bloodGroup}}>
       <option value="A+">A+</option>
       <option value="A-">A-</option>
       <option value="B+">B+</option>
@@ -24,21 +33,31 @@
       <option value="O+">O+</option>
       <option value="O-">O-</option>
     </select>
+    <div class="error" *ngIf="editForm.get('blood').hasError('required')">
+        please provide your Blood Group
+    </div>
     <br><br>
     <label class="form-label">Birth Date :</label>
-    <input class="form-input" type="date" #bdate placeholder="eg: 18-12-2000">
+    <input class="form-input" formControlName="bdate" type="date" #bdate value={{person.birthDate}}>
+    <div class="error" *ngIf="editForm.get('bdate').hasError('required')">
+        please provide your BirthDate
+    </div>
     <br><br>
     <label class="form-label">Phone :</label>
-    <input class="form-input" type="tel" #phone value={{person.phone}}>
+    <input class="form-input" formControlName="phone" type="tel" #phone value={{person.phone}}>
+    <div class="error" *ngIf="editForm.get('phone').hasError('required')">
+        please provide a phone number
+    </div>
     <br><br>
     <label class="form-label">Email :</label>
-    <input class="form-input" type="email" #email placeholder="eg: abc@gmail.com">
+    <input class="form-input" formControlName="email" type="email" #email value={{person.email}}>
+    <div class="error" *ngIf="editForm.get('email').hasError('required')">
+        please provide an email address
+    </div>
     <br><br>
 
-    <a routerLink="/" routerLinkActive="active" class="inactive">
-        <div class="submit-button" (click)="edit(name.value,number.value,gender.value,phone.value,blood.value,email.value,bdate.value)"><img src="../../../../assets/icons/edit.svg" style="height: 20px;width: 20px;"> Save</div>
-    </a>
-</div>
+    <button type="submit" class="submit-button"><img src="../../../../assets/icons/edit.svg" style="height: 20px;width: 20px;">Edit</button>
+</form>
 
 
 <div class="overlay"></div>

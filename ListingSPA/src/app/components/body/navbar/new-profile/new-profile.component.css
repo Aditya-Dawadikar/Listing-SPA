@@ -1,6 +1,7 @@
 .edit-form {
     width: 520px;
-    height: 520px;
+    min-height: 520px;
+    max-height: 850px;
     background-color: #ffffff;
     box-shadow: 10px 10px 8px #556159;
     justify-content: center;
@@ -11,6 +12,7 @@
     top: calc(50% - 200px);
     z-index: 3;
     border: #566159 1px solid;
+    margin-bottom: 50px;
 }
 
 .form-label {
@@ -40,8 +42,13 @@
     justify-content: center;
     text-align: center;
     padding: 5px 10px 5px 10px;
-    margin: 5px auto;
+    position: relative;
+    left: calc(50% - 50px);
     cursor: pointer;
+}
+
+.submit-button:focus {
+    outline: none;
 }
 
 .submit-button:hover {
@@ -74,4 +81,10 @@
     position: fixed;
     top: 0;
     z-index: 2;
+}
+
+.error {
+    background-color: #fff53b;
+    margin: 5px auto;
+    text-align: center;
 }
